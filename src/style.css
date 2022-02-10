@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #b3c4d4;
+}
+
+.main {
+    width: 90vw;
+    min-width: 200px;
+    max-width: 500px;
+    height: 90vw;
+    min-height: 400px;
+    max-height: 800px;
+
+    margin: 5vw;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #4d7192;
+}
+
+#togglePswdBut {
+    margin-left: -30px;
+    cursor: pointer;
+}
+#copyBtn {
+    margin-left: 30px;
+}
+
+.form-container {
+    width: 100%;
+    background-color: coral;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    float: left;
+    width: 50%;
+}
+
+input {
+    width: 50%;
+}
