@@ -1,3 +1,6 @@
+import getPassword from "./form-controller";
+import copyPassword from "./form-controller";
+
 const MIN_LENGTH = 3;
 const MAX_LENGTH = 50;
 
@@ -10,6 +13,10 @@ function initializeWeb() {
 
     const BODY = document.getElementsByTagName("body")[0];
     BODY.appendChild(createMain());
+
+    //document.getElementById("copy-btn").addEventListener("click", () => copyPassword());
+    document.getElementById("generate-but").addEventListener("click", () => getPassword());
+
 }
 
 function createMain() {
@@ -18,9 +25,6 @@ function createMain() {
     MAIN.classList.add("main");
 
     MAIN.appendChild(createForm());    
-
-
-
 
     return MAIN;
 }
@@ -42,8 +46,9 @@ function createForm() {
     FORM.appendChild(togglePswd);
 
     let copyBtn = document.createElement("button")
-    copyBtn.setAttribute("id", "copyBtn");
-    copyBtn.textContent = "COPIAR";
+    copyBtn.setAttribute("id", "copy-btn");
+    copyBtn.setAttribute("type", "button");
+    copyBtn.textContent = "Copy";
     FORM.appendChild(copyBtn);
 
     let info = document.createElement("p");
@@ -95,9 +100,11 @@ function createForm() {
     FORM_CONTAINER.appendChild(symbolsContainer);
 
 
-    let generateBut = document.createElement("input");
-    generateBut.setAttribute("type", "submit");
-    generateBut.setAttribute("value", "Generate");
+    let generateBut = document.createElement("button");
+    generateBut.setAttribute("type", "button");
+    //generateBut.setAttribute("value", "Generate");
+    generateBut.textContent = "Generate";
+    generateBut.setAttribute("id", "generate-but");
     FORM_CONTAINER.appendChild(generateBut);
 
     FORM.appendChild(FORM_CONTAINER);
@@ -118,6 +125,7 @@ function createCheckbox(id, value) {
     chkbx.setAttribute("id", id);
     chkbx.setAttribute("name", id);
     chkbx.setAttribute("value", value);
+    chkbx.setAttribute("checked", true);
 
     return chkbx;
 }
